@@ -33,7 +33,6 @@ public class Solution {
         String price = spacePad(args[2], 8);
         String quantity = spacePad(args[3], 4);
         String newLine = newId + product + price + quantity;
-        list.add(newLine);
         BufferedWriter os = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fn, true)));
         os.write("\n" + newLine);
         os.close();
