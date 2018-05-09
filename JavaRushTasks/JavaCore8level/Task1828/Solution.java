@@ -26,6 +26,8 @@ public class Solution {
         ArrayList<String> list = readFileToList(fn);
         int id = Integer.parseInt(args[1]);
         int index = getRowIndex(list, id);
+        if (index == -1)
+            return;
         String newId = spacePad(String.valueOf(id), 8);
         String product = spacePad(args[2], 30);
         String price = spacePad(args[3], 8);
@@ -39,6 +41,8 @@ public class Solution {
         ArrayList<String> list = readFileToList(fn);
         int id = Integer.parseInt(args[1]);
         int index = getRowIndex(list, id);
+        if (index == -1)
+            return;
         list.remove(index);
         writeListToFile(list, fn);
     }
