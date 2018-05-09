@@ -21,12 +21,13 @@ public class Solution {
             list.add(is.readLine());
         }
         is.close();
-        ArrayList<Integer> listId = new ArrayList<>();
+        int maxId = 0;
         for (String s : list) {
-            listId.add(Integer.parseInt(s.substring(0, 8).replace(" ", "")));
+            int id = Integer.parseInt(s.substring(0, 8).replace(" ", ""));
+            if (maxId < id)
+                maxId = id;
         }
-        Collections.sort(listId);
-        int id = listId.get(listId.size()-1) + 1;
+        int id = maxId + 1;
         String newId = spacePad(String.valueOf(id), 8);
         String product = spacePad(args[1], 30);
         String price = spacePad(args[2], 8);
